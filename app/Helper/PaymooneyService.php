@@ -33,7 +33,7 @@ class PaymooneyService
     public function make_payment($value)
     {
         try {
-            $data = array(
+            $data_ = array(
                 'amount' => intval($value['amount']),
                 'currency_code' => 'XAF',
                 'ccode' => 'CM',
@@ -48,6 +48,26 @@ class PaymooneyService
                 'public_key' => 'PK_M3bEkEq6CelazAR2JyK2',
                 'logo' => 'https://paymooney.com/images/logo_paymooney2.png',
                 'environement' => 'test'
+            );
+            $data = array(
+                'amount' => intval($value['amount']),
+                'currency_code' => 'XAF',
+                'ccode' => 'CM',
+                'lang' => 'fr',
+                'item_ref' => $value['vote_id'],
+                'item_name' => ''.env('APP_NAME'),
+                'description' => 'Vote pour '.$value['rubrique'],
+                'email' => 'exemple@email.com',
+                'phone' => '+2376895463',
+                'redirectOnFailureUrl' => route('cancel').'?vote_id='.$value['vote_id'],
+                'callbackUrl' => route('callback').'?vote_id='.$value['vote_id'],
+                'callbackOnFailureUrl' => route('callback').'?vote_id='.$value['vote_id'],
+                'redirectUrl'=>route('home'),
+                'last_name' => 'Surname',
+                'public_key' => 'PK_M3bEkEq6CelazAR2JyK2',
+                'logo' => asset('front/images/logo.png'),
+                'environement' => 'test',
+                "redirectTarget" => "TOP",
             );
             $options = [
                 'headers' => [

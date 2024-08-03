@@ -85,22 +85,35 @@ class HomeController extends Controller
     }
     public function callback(Request $request)
     {
-        $ref=$request->get('item_ref');
-        logger($request->all());
+        $ref=$request->get('vote_id');
+        logger($_POST["status"]);
+        if(isset($_POST["status"]))
+            $status=$_POST["status"];
         if ($request->get('status')=='Status'){
             logger($request->all());
         }
     }
-    public function cancel()
+    public function cancel(Request $request)
     {
-
+        logger($_POST["status"]);
+        $ref=$request->get('vote_id');
+        $vote=Vote::query()->find($ref);
+        $vote->status='rejected';
+        $vote->save();
         return view('cancel', [
 
         ]);
     }
-    public function success()
+    public function success(Request $request)
     {
+        logger($_POST["status"]);
+        $ref=$request->get('vote_id');
+        $vote=Vote::query()->find($ref);
 
+        if(isset($_POST["status"]))
+            $status=$_POST["status"];
+        $vote->status='accepted';
+        $vote->save();
         return view('success', [
 
         ]);
