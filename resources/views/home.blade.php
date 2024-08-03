@@ -52,8 +52,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="" data-aos="fade-up" data-aos-duration="700">
-
+            <div class="call-to-action" data-aos="fade-up" data-aos-duration="700">
                  <img src="{{ asset('front/images/silder.jpeg') }}">
                 </div>
         </div>

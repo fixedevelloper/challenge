@@ -148,7 +148,7 @@
     /* header section responsive start here */
     .donate-btn {
         margin-right: 15px;
-    }    
+    }
     .header-main-con .navbar .collapse.navbar-collapse {
         margin-right: 40px;
     }
@@ -258,7 +258,7 @@
         background-size: contain;
         width: 184px;
         height: 194px;
-    }    
+    }
     .index2-banner-left-con {
         margin-top: -30px;
     }
@@ -557,7 +557,7 @@
         background-size: contain;
         width: 57px;
         height: 80px;
-    }    
+    }
     .team-main-section::before {
         background-size: contain;
         width: 236px;
@@ -637,7 +637,7 @@
     }
     .index2-banner-section {
         height: 594px;
-    }    
+    }
     /*  */
     #button {
         bottom: 30px;
@@ -720,7 +720,7 @@
     }
     span.small-txt::before {
         height: 2px;
-    }    
+    }
     .small-txt {
         padding-bottom: 7px;
     }
@@ -782,7 +782,7 @@
     }
     .about-left-con p {
         margin-bottom: 10px;
-    }    
+    }
     .about-main-section .generic-title {
         margin-bottom: 15px;
     }
@@ -857,7 +857,7 @@
         padding: 20px 25px 15px;
         width: 91%;
     }
-    
+
     /* blog section responsive end here */
     /* feedback section responsive start here */
     .feedback-section::after {
@@ -1383,7 +1383,7 @@
         width: 100px;
         height: 45px;
         right: 40px;
-    }    
+    }
     .about-right-con figure img {
         width: 230px;
     }
@@ -1888,7 +1888,7 @@
     .joining-main-con {
         padding: 25px 30px;
         text-align: left;
-    }   
+    }
     .joining-main-con::after {
         width: 150px;
         height: 115px;
@@ -2329,7 +2329,7 @@
     .coming-soon-social-links ul {
         margin-bottom: 26px;
     }
-    
+
     /* coming soon page  */
     .footer-list-box{
         display: none;
@@ -2340,9 +2340,12 @@
     }
 }
 @media only screen and (max-width: 575px){
+    .call-to-action img{
+        width: 320px;
+    }
     /* header section responsive start here */
     .header-main-con .navbar-brand figure img {
-        width: 160px;
+        width: 100px;
         object-fit: contain;
     }
     .header-main-con .navbar-light .navbar-brand {
@@ -2546,7 +2549,7 @@
         padding: 10px 20px;
         font-size: 14px;
         width: 44%;
-    }    
+    }
     /* section responsive end here */
     /* section responsive start here */
     .generic-title span {
@@ -2717,7 +2720,7 @@
         gap: 20px;
         padding: 20px;
         grid-template-columns: 100%;
-    }    
+    }
     .index2-form-inner-section .form-box {
         padding: 0;
     }
@@ -2730,7 +2733,7 @@
     .index2-video-section .generic-title h2 {
         line-height: 28px;
         margin-left: 0;
-    }    
+    }
     .index2-video-left-inner-con span.label {
         width: 160px;
         height: 34px;
@@ -2787,7 +2790,7 @@
     }
     .index2-sponsors-section ul li {
         padding: 25px 15px;
-    }    
+    }
     .index2-sponsors-section ul {
         grid-template-columns: 38% 38%;
     }
