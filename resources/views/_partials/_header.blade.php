@@ -41,7 +41,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link p-0" href="donation.html">NOS PARTENAIRES</a>
+                        <a class="nav-link p-0" href="#">NOS PARTENAIRES</a>
                     </li>
                 </ul>
             </div>
@@ -52,12 +52,12 @@
                     <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
                 </ul>
                 <div class="donate-btn">
-                    <a href="donation.html">
+                    <a href="#">
                         <i class="fas fa-hand-holding-usd"></i> Devenir partenaire
                     </a>
                 </div>
                 <div class="header-contact-btn">
-                    <a href="tel:+18002345"><i class="fas fa-phone-alt"></i> +1 (800) 234 5</a>
+                    <a href="tel:+18002345"><i class="fas fa-phone-alt"></i> +237696023586</a>
                 </div>
             </div>
         </nav>

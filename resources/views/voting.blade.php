@@ -17,6 +17,7 @@
             <div class="sub-banner-inner-con">
                 <div class="sub-banner-left-con">
                     <h1 data-aos="fade-up" data-aos-duration="700">{{ $candidat->name }}</h1>
+                    <p>Prenez un moment pour voter et aider à couronner les talents les plus méritants.</p>
                     <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-duration="700">
                         <ol class="breadcrumb d-inline-block">
                             <li class="breadcrumb-item d-inline-block"><a href="{{route('home')}}">HOME</a></li>
@@ -26,7 +27,8 @@
                 </div>
                 <div class="sub-banner-right-con" >
                     <div class="banner2-right-top-txt">
-                        <span class="d-inline-block">“Stands For A Better, <br> United Tomorrow.”</span>
+                        <span class="d-inline-block">“ Le concours est en pleine effervescence,  <br> et chaque vote est crucial pour soutenir vos favoris”</span>
+
                     </div>
                     <figure class="mb-0">
                         <img src="{{ asset('front/images/logo.png') }}" alt="sub-banner-right-man-img">
