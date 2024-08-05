@@ -10,6 +10,6 @@ class Vote extends Model
     use HasFactory;
     public function rubrique_candidat()
     {
-        return $this->belongsTo(RubriqueCandidat::class,'rubriqueCandidat_id','id');
+        return $this->belongsTo(RubriqueCandidat::class,'rubrique_candidat_id','id');
     }
 }

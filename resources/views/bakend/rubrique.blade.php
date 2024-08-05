@@ -4,14 +4,6 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Rubriques</h4>
-                <button
-                    type="button"
-                    class="btn btn-primary float-end"
-                    data-toggle="modal"
-                    data-target="#BuyModal"
-                >
-                    Add rubrique
-                </button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

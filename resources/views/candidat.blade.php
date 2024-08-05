@@ -50,10 +50,10 @@
                                         <img src="{{ asset('storage/'.$candidat->candidat->photo) }}" alt="" class="img-fluid" loading="lazy">
                                     </figure>
                                     <div class="lower-portion">
-                                        <i class="fa-solid fa-user"></i>
+                                        <i class="tag-mb fas fa-tag"></i>
                                         <span class="text-size-14 text-mr">N° {{ $candidat->candidat->numero }}</span>
-                                        <i class="tag-mb fa-solid fa-tag"></i>
-                                        <h4>{{ $candidat->candidat->name }}</h4>
+
+                                        <h4>  <i class="fas fa-user"></i> {{ $candidat->candidat->name }}</h4>
                                         @php
 
                                         @endphp

@@ -8,6 +8,7 @@ use App\Helper\UploadableTrait;
 use App\Models\Candidat;
 use App\Models\Edition;
 use App\Models\Rubrique;
+use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 
@@ -45,8 +46,9 @@ class backendController extends Controller
         if ($request->method()=='POST'){
             $candidat=new Candidat();
             $candidat->name=$request->name;
-            $candidat->name_artist=$request->name_artist;
+            $candidat->name_artist=$request->artist_name;
             $candidat->phone=$request->phone;
+            $candidat->numero=$request->numero;
             $candidat->edition_id=$edition->id;
             if ($request->hasFile('photo') && $request->file('photo') instanceof UploadedFile) {
                 $photo = $this->storeFile($request->file('photo'), 'photos');
@@ -67,26 +69,36 @@ class backendController extends Controller
         ]);
     }
     function vote(Request $request){
-        return view('bakend.vote');
+        $items=Vote::query()->where(['status'=>'ACTIVATED'])->paginate(20);
+        logger($items);
+        return view('bakend.vote',[
+            'items'=>$items,
+        ]);
     }
-    public function edition_modal(Request $request)
-    {   $crypto=CryptoMonaire::query()->find($request->id);
+    public function candidat_edit(Request $request,$id)
+    {   $candidat=Candidat::query()->find($id);
         if ($request->method() == "POST"){
-            if ($crypto->status==false){
-                toastr()->success("Crypto not activate", 'Error request', ["Failed loggedIn"]);
-                return back();
+            $candidat->name=$request->name;
+            $candidat->name_artist=$request->artist_name;
+            $candidat->phone=$request->phone;
+            $candidat->numero=$request->numero;
+            if ($request->hasFile('photo') && $request->file('photo') instanceof UploadedFile) {
+                $photo = $this->storeFile($request->file('photo'), 'photos');
+                $candidat->photo=$photo;
             }
-            $crypto->taux=$request->get('taux_buy');
-            $crypto->taux_sell=$request->get('taux_sell');
-            $crypto->save();
-            toastr()->success("Wallet add successful", 'Successful request', ["Failed loggedIn"]);
+            $candidat->save();
+            if (isset($request->rubriques) && sizeof($request->rubriques)>0){
+                for ($i=0;$i<sizeof($request->rubriques);$i++){
+                    $candidat->rubriques()->attach($request->rubriques[$i]);
+                }
+            }
+
             return redirect()->back();
         }
 
-        return view('admin.modals.taux_echange', [
-            'crypto'=>$crypto,
-            'quantity'=>$request->quantity,
-            'currency_sell'=>$request->currency_sell,
+        return view('bakend.modals.edit_candidat', [
+            'candidat'=>$candidat,
+            'rubriques'=>Rubrique::all()
         ]);
     }
 }

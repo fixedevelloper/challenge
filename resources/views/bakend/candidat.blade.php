@@ -20,6 +20,7 @@
                         <tr>
                             <th>Photo</th>
                             <th>Name</th>
+                            <th>Dossard</th>
                             <th>Pseudo</th>
                             <th>Rubriques</th>
                             <th></th>
@@ -34,13 +35,16 @@
                             <td class="coin-name">
                                 <i class="cc BTC"></i> {{ $item->name }}
                             </td>
+                            <td>{{ $item->numero }}</td>
                             <td>{{ $item->name_artist }}</td>
                             <td class="text-danger">
                                 @foreach($item->rubriques as $rubrique)
                                     <span class="badge bg-black">{{ $rubrique->name }}</span>
                                 @endforeach
                               </td>
-                            <td></td>
+                            <td>
+                                <a rel="modal:open" href="{{ route('candidat_edit',['id'=>$item->id]) }}" class="btn btn-outline-success"><i class="icofont icofont-edit"></i></a>
+                            </td>
                         </tr>
                         @endforeach
                         </tbody>
@@ -77,7 +81,7 @@
                                 <input name="artist_name" type="text" class="form-control" placeholder="">
                             </div>
                             <div class="col-6 mt-3">
-                                <label class="form-label">Numero</label>
+                                <label class="form-label">Dossard</label>
                                 <input name="numero" type="text" class="form-control" placeholder="">
                             </div>
                             <div class="col-12 mt-3">

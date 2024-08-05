@@ -29,7 +29,7 @@
                         <div class="header-left">
                             <div class="brand-logo">
                                 <a href="{{ route('dashboard') }}">
-                                    <img src="{{asset(' front/images/logo.png')}}" alt="" width="120" />
+                                    <img src="{{asset(' front/images/logo.png')}}" alt="" width="150" />
                                     <span>{{ env('APP_NAME') }}</span>
                                 </a>
                             </div>
@@ -44,7 +44,7 @@
                             <div class="profile_log dropdown">
                                 <div class="user" data-toggle="dropdown">
                       <span class="thumb"
-                      ><img src="{{ asset('u') }}" alt=""
+                      ><img src="{{ asset('front/images/admin.jpg') }}" alt=""
                           /></span>
                                     <span class="arrow"
                                     ><i class="icofont-angle-down"></i
@@ -54,41 +54,21 @@
                                     <div class="user-email">
                                         <div class="user">
                           <span class="thumb"
-                          ><img src="./images/profile/2.png" alt=""
+                          ><img src="{{ asset('front/images/admin.jpg') }}" alt=""
                               /></span>
                                             <div class="user-info">
-                                                <h5>Jannatul Maowa</h5>
-                                                <span>Qash.inc@gmail.com</span>
+                                                <h5>Julio mbah</h5>
+                                                <span>rodriguembah13@gmail.com</span>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="user-balance">
-                                        <div class="available">
-                                            <p>Available</p>
-                                            <span>0.00 BTC</span>
-                                        </div>
-                                        <div class="total">
-                                            <p>Total</p>
-                                            <span>0.00 USD</span>
-                                        </div>
-                                    </div>
-                                    <a href="profile.html" class="dropdown-item">
+                                    <a href="#" class="dropdown-item">
                                         <i class="icofont-ui-user"></i>Profile
                                     </a>
-                                    <a href="wallet.html" class="dropdown-item">
-                                        <i class="icofont-wallet"></i>Wallet
-                                    </a>
-                                    <a href="settings-profile.html" class="dropdown-item">
-                                        <i class="icofont-ui-settings"></i> Setting
-                                    </a>
-                                    <a href="settings-activity.html" class="dropdown-item">
-                                        <i class="icofont-history"></i> Activity
-                                    </a>
-                                    <a href="lock.html" class="dropdown-item">
+                                    <a href="#" class="dropdown-item">
                                         <i class="icofont-lock"></i>Lock
                                     </a>
-                                    <a href="signin.html" class="dropdown-item logout">
+                                    <a href="#" class="dropdown-item logout">
                                         <i class="icofont-logout"></i> Logout
                                     </a>
                                 </div>
@@ -102,7 +82,7 @@
 
     <div class="sidebar">
         <div class="brand-logo">
-            <a href="{{ route('dashboard') }}"><img src="./images/logo.png" alt="" /> </a>
+            <a href="{{ route('dashboard') }}"><img src="{{ asset('front/images/logo.png') }}" alt="" /> </a>
         </div>
         <div class="menu">
             <ul>
@@ -158,7 +138,7 @@
                 </li>
                 <li class="logout">
                     <a
-                        href="signin.html"
+                        href="#"
                         data-toggle="tooltip"
                         data-placement="right"
                         title="Signout"
@@ -183,7 +163,7 @@
 
 <script src="{{ asset('assets/backend/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{!! asset('assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
-
+<script src="{!! asset('assets/backend/js/jquery.modal.min.js') !!}"></script>
 <script src="{!! asset('assets/backend/js/scripts.js') !!}"></script>
 <script></script>
 </body>

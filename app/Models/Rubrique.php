@@ -12,4 +12,8 @@ class Rubrique extends Model
     {
         return $this->belongsToMany(Candidat::class,'rubrique_candidats');
     }
+    public function rubrique()
+    {
+        return $this->hasOne(RubriqueCandidat::class);
+    }
 }

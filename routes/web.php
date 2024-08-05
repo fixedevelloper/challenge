@@ -30,8 +30,8 @@ Route::group(['prefix' => 'admin'],function () {
         ->name('edition');
     Route::match(["POST", "GET"], '/rubrique', [backendController::class, 'rubrique'])
         ->name('rubrique');
-    Route::match(["POST", "GET"], '/assurance', [backendController::class, 'assurance'])
-        ->name('assurance');
+    Route::match(["POST", "GET"], '/edit-candidat/{id}', [backendController::class, 'candidat_edit'])
+        ->name('candidat_edit');
     Route::match(["POST", "GET"], '/vote', [backendController::class, 'vote'])
         ->name('vote');
 });

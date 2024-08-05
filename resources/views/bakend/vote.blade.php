@@ -11,25 +11,26 @@
                         <thead>
                         <tr>
                             <th>Candidat</th>
+                            <th>Rubrique</th>
                             <th>Votes</th>
-                            <th>Montant</th>
+                            <th>Montant (FCFA)</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($items as $item)
                         <tr>
                             <td>
-                            <span class="danger-arrow"
-                            ><i class="icofont-arrow-down"></i> Sold</span
-                            >
+                           {{ $item->rubrique_candidat->candidat->name }}
                             </td>
                             <td class="coin-name">
-                                <i class="cc BTC"></i> Bitcoin
+                                {{ $item->rubrique_candidat->rubrique->name }}
                             </td>
-                            <td>Using - Bank *******5264</td>
-                            <td class="text-danger">-0.000242 BTC</td>
-                            <td>-0.125 USD</td>
+                            <td>{{ $item->quantity }}</td>
+                            <td class="text-danger">{{ $item->quantity*100 }}</td>
+                            <td></td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

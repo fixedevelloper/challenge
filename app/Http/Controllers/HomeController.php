@@ -95,7 +95,7 @@ class HomeController extends Controller
     }
     public function cancel(Request $request)
     {
-        logger($_POST["status"]);
+        logger($request->status);
         $ref=$request->get('vote_id');
         $vote=Vote::query()->find($ref);
         $vote->status='rejected';

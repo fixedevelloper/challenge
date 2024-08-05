@@ -14,6 +14,6 @@ class RubriqueCandidat extends Model
     }
     public function rubrique()
     {
-        return $this->belongsTo(Edition::class,'rubrique_id','id');
+        return $this->belongsTo(Rubrique::class,'rubrique_id','id');
     }
 }

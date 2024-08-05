@@ -16,4 +16,8 @@ class Candidat extends Model
     {
         return $this->belongsToMany(Rubrique::class,'rubrique_candidats');
     }
+    public function rubrique()
+    {
+        return $this->hasOne(RubriqueCandidat::class);
+    }
 }
