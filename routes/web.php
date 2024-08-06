@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admin'],function () {
         ->name('rubrique');
     Route::match(["POST", "GET"], '/edit-candidat/{id}', [backendController::class, 'candidat_edit'])
         ->name('candidat_edit');
+    Route::match(["POST", "GET"], '/candidat-delete/{id}', [backendController::class, 'candidat_delete'])
+        ->name('candidat_delete');
     Route::match(["POST", "GET"], '/vote', [backendController::class, 'vote'])
         ->name('vote');
 });

@@ -62,15 +62,19 @@ class backendController extends Controller
 
         }
         $rubriques=Rubrique::all();
-        $items=Candidat::query()->where('edition_id','=',$edition->id)->paginate(20);
+        $items=Candidat::query()->where('edition_id','=',$edition->id)
+            ->where('activate','=',true)->paginate(20);
         return view('bakend.candidat',[
             'items'=>$items,
             'rubriques'=>$rubriques
         ]);
     }
     function vote(Request $request){
-        $items=Vote::query()->where(['status'=>'ACTIVATED'])->paginate(20);
-        logger($items);
+        $items=Vote::query()
+            ->leftJoin('rubrique_candidats','rubrique_candidats.id','=','votes.id')
+            ->leftJoin('candidats','candidats.id','=','rubrique_candidats.candidat_id')
+            ->where(['status'=>'ACTIVATED','activate'=>true])
+            ->paginate(20);
         return view('bakend.vote',[
             'items'=>$items,
         ]);
@@ -99,6 +103,18 @@ class backendController extends Controller
         return view('bakend.modals.edit_candidat', [
             'candidat'=>$candidat,
             'rubriques'=>Rubrique::all()
+        ]);
+    }
+    public function candidat_delete(Request $request,$id)
+    {   $candidat=Candidat::query()->find($id);
+        if ($request->method() == "POST"){
+            $candidat->activate=false;
+            $candidat->save();
+            return redirect()->back();
+        }
+
+        return view('bakend.modals.delete_candidat', [
+            'candidat'=>$candidat,
         ]);
     }
 }

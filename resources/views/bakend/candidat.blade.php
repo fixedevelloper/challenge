@@ -44,6 +44,7 @@
                               </td>
                             <td>
                                 <a rel="modal:open" href="{{ route('candidat_edit',['id'=>$item->id]) }}" class="btn btn-outline-success"><i class="icofont icofont-edit"></i></a>
+                                <a rel="modal:open" href="{{ route('candidat_delete',['id'=>$item->id]) }}" class="btn btn-outline-danger"><i class="icofont icofont-trash"></i></a>
                             </td>
                         </tr>
                         @endforeach

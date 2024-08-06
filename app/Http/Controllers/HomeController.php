@@ -77,7 +77,10 @@ class HomeController extends Controller
     public function rubrique(Request $request)
     {
         $rubrique=Rubrique::query()->find($request->id);
-        $candidats=RubriqueCandidat::query()->where('rubrique_id','=',$request->id)->get();
+        $candidats=RubriqueCandidat::query()
+            ->leftJoin('candidats','candidats.id','=','rubrique_candidats.candidat_id')
+            ->where('rubrique_id','=',$request->id)
+            ->where('activate','=',true)->get();
         return view('candidat', [
             'rubrique'=>$rubrique,
             'candidats'=>$candidats
