@@ -80,7 +80,7 @@ class HomeController extends Controller
         $candidats=RubriqueCandidat::query()
             ->leftJoin('candidats','candidats.id','=','rubrique_candidats.candidat_id')
             ->where('rubrique_id','=',$request->id)
-            ->where('activate','=',true)->get();
+            ->where('activate','=',true)->inRandomOrder()->get();
         return view('candidat', [
             'rubrique'=>$rubrique,
             'candidats'=>$candidats
