@@ -50,8 +50,12 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="mt-3">
+                        {{$items->links('vendor.pagination.bootstrap-5')}}
+                    </div>
+
                 </div>
-                {{$items->links()}}
+
             </div>
         </div>
     </div>
